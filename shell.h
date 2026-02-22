@@ -1,0 +1,19 @@
+#ifndef SHELL_H
+#define SHELL_H
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <sys/stat.h>
+#include <string.h>
+
+extern char **environ;
+
+void prompt(void);
+char **parse_line(char *line);
+int execute_cmd(char **argv);
+char *_which(char *command);
+char *_getenv(const char *name);
+
+#endif
